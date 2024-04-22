@@ -1,32 +1,12 @@
-{
-  "employees": [
-    {
-      "id":"0200014129",
-      "firstName":"هلیا",
-      "lastName":"اکبری",
-      "location":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8435.080219357658!2d51.34267061025332!3d35.7309311784731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e00491ff3dcd9%3A0xf0b3697c567024bc!2sTehran%2C%20Tehran%20Province%2C%20Iran!5e0!3m2!1sen!2sfi!4v1713730199680!5m2!1sen!2sfi",
-      "chart":""
-    },
-    {
-      "id":"1231231234",
-      "firstName":"سینا",
-      "lastName":"فراهانی",
-      "location":"",
-      "chart":""
-    },
-    {
-      "id":"9809390231",
-      "firstName":"نسترن",
-      "lastName":"معبودی",
-      "location":"",
-      "chart":""
-    },
-    {
-      "id":"5678987531",
-      "firstName":"علیرضا",
-      "lastName":"سعیدی",
-      "location":"",
-      "chart":""
-    }
-  ]
-}
+[
+
+  {
+    "id": "0200014129",
+    "firstName": "To Kill a Mockingbird",
+    "lastName": "Harper Lee",
+    "location": [51.42047, 35.729054],
+    "chart":null
+  }
+
+]
+

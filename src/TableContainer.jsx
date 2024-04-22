@@ -1,16 +1,17 @@
-import { Table } from "react-bootstrap";
-import data from "./assets/data.json";
+import { Table,Button } from "react-bootstrap";
+import { giveList } from "./JsonManager";
 import TableRow from "./TableRow";
 
-let employees = data["employees"];
-let rows =employees.map((item,index)=>{
+export default function TableContainer({renderApp}){
+  let rows =giveList().map((item,index)=>{
     return(
-    <TableRow {...item} key={index} index={index+1}></TableRow>)
+    <TableRow {...item} key={index} index={index} renderApp={renderApp}></TableRow>)
 })
-console.log(rows)
-export default function TableContainer(){
+
   return (
-    <Table bordered hover className="table-primary table-bordered ">
+    <>
+    
+    <Table bordered hover className="table-primary table-bordered">
       <thead>
         <tr>
           <th>ردیف</th>
@@ -24,5 +25,6 @@ export default function TableContainer(){
         {rows}
       </tbody>
     </Table>
+    </>
     );
 }
