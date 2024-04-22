@@ -55,7 +55,7 @@ export default function EditButton(props) {
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
-        className="my-modal"
+        className="my-modal m-0"
       >
 
         <Modal.Header>

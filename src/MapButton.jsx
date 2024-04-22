@@ -26,15 +26,14 @@ const apiKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjY4ZTk2NzM3ZTE0ZGUw
 });
   return (
     <>
-      <Button variant="primary" className='my-3 btn-sm' onClick={handleShow}><FontAwesomeIcon icon={faLocationDot} /></Button>
-
+      <Button variant="primary" className='mx-1 btn-sm' onClick={handleShow}><FontAwesomeIcon icon={faLocationDot} /></Button>
       <Modal
         size='lg'
         show={show}
         onHide={handleClose}
         backdrop="static"
         keyboard={false}
-        className="my-modal"
+        className="my-modal m-0"
       >
 
         <Modal.Header>

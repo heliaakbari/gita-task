@@ -16,7 +16,7 @@ export default function TableRow(props){
           <td>
             <Button className='mx-1 btn-sm'><FontAwesomeIcon icon={faEye} /></Button>
             <EditButton {...props}/>
-            <MapButton className='mx-1 btn-sm' location={props.location}></MapButton>
+            <MapButton location={props.location}></MapButton>
             <Button className='mx-1 btn-sm' onClick={()=>{deletePerson(props.index); props.renderApp();}}><FontAwesomeIcon icon={faTrashCan} /></Button>
             <Button className='mx-1 btn-sm'><FontAwesomeIcon icon={faChartColumn} /></Button>
           </td>
