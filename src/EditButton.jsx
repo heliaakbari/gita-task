@@ -49,7 +49,7 @@ export default function EditButton(props) {
 
   return (
     <>
-      <Button className='mx-1 btn-sm' onClick={handleShow} ><FontAwesomeIcon icon={faPenToSquare} /></Button>
+      <Button className='mx-1 btn-sm' title="ویرایش" onClick={handleShow} ><FontAwesomeIcon icon={faPenToSquare} /></Button>
       <Modal
         show={show}
         onHide={handleClose}

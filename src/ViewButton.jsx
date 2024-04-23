@@ -18,7 +18,7 @@ export default function ViewButton({firstName,lastName,id}){
   return (
     <>
 
-      <Button className='mx-1 btn-sm' onClick={handleShow}><FontAwesomeIcon icon={faEye} /></Button>
+      <Button className='mx-1 btn-sm' title="مشاهده" onClick={handleShow}><FontAwesomeIcon icon={faEye} /></Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header >

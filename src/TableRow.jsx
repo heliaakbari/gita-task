@@ -20,7 +20,7 @@ export default function TableRow(props){
             <EditButton {...props}/>
             <MapButton location={props.location}></MapButton>
             <DeleteButton index={props.index} renderApp={props.renderApp} />
-            <Button className='mx-1 btn-sm'><FontAwesomeIcon icon={faChartColumn} /></Button>
+            <Button className='mx-1 btn-sm' title="چارت حقوق"><FontAwesomeIcon icon={faChartColumn} /></Button>
           </td>
         </tr>
     )
