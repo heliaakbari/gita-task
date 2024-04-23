@@ -22,7 +22,7 @@ export default function SearchForm() {
         <Form.Control type="text" placeholder="کد ملی را وارد کنید" />
       </Form.Group>
         <div className="col-auto my-0  d-flex align-items-end ">
-      <Button type="submit" className="btn btn-primary">جستجو</Button>
+      <Button className="btn btn-primary">جستجو</Button>
     </div>
       </Row>
 
