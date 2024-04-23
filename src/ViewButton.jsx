@@ -1,12 +1,8 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye} from '@fortawesome/free-solid-svg-icons'
-import { Button } from 'react-bootstrap'
+import { Button,Container,Row,Col,Modal } from 'react-bootstrap'
 import { useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 export default function ViewButton({firstName,lastName,id}){
 

@@ -1,24 +1,22 @@
-import Button from 'react-bootstrap/Button';
 import { useState,useRef } from 'react';
-import {Modal,Row,Col,Form} from 'react-bootstrap';
-import { validId } from './Regex';
-import { addPerson, giveList } from './JsonManager';
-import Mapir from 'mapir-react-component';
-import 'mapir-react-component/dist/index.css';
+import {Modal,Row,Col,Form,Button} from 'react-bootstrap';
+import { validId ,defaultLocation} from './Utility';
+import { addPerson} from './DataManager';
 import Mapview from './Mapview';
 import PersonelForm from './PersonelForm';
 
+
 export default function AddButton({renderApp}) {
-  const defaultLocation = [51.42047, 35.729054]
   const [show, setShow] = useState(false);
   const handleClose = () => {
     firstNameRef.current = "";
     lastNameRef.current = "";
     idRef.current = ""
     locationRef.current = defaultLocation;
-    setShow(false)}
-    ;
+    setShow(false)};
+
   const handleShow = () => setShow(true);
+
   const firstNameRef = useRef('')
   const lastNameRef = useRef('')
   const idRef = useRef('')
@@ -26,8 +24,6 @@ export default function AddButton({renderApp}) {
 
 
   function submit(){
-    console.log([firstNameRef.current,lastNameRef.current,idRef.current,locationRef.current])
-
     if (validId.test(idRef.current)) {
       addPerson(idRef.current,firstNameRef.current,lastNameRef.current,locationRef.current)
       handleClose()

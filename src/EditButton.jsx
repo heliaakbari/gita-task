@@ -1,30 +1,27 @@
-import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
-import {Modal,Row,Col,Form} from 'react-bootstrap';
-import { validId } from './Regex';
-import { editPerson} from './JsonManager';
+import {Modal,Row,Col,Form, Button} from 'react-bootstrap';
+import { validId , idCaptioner} from './Utility';
+import { editPerson} from './DataManager';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPenToSquare} from '@fortawesome/free-solid-svg-icons'
+
 
 export default function EditButton(props) {
 
   const [show, setShow] = useState(false);
-
   const [firstName, setFirstName] = useState(props.firstName)
   const [lastName, setLastName] = useState(props.lastName);
   const [id, setId] = useState(props.id);
-  const [idCaption,setIdCaption] = useState(<Form.Text id="passwordHelpBlock" className='text-danger'>
-                    کد ملی باید یک عدد ده رقمی باشد
-                </Form.Text>);
+  const [idCaption,setIdCaption] = useState(idCaptioner(id));
 
-  const handleClose = () => {setShow(false);
-                            };
-  const handleShow = () => {setShow(true);
-                            setFirstName(props.firstName);
-                            setLastName(props.lastName);
-                            handleIdChange(props.id)
-                            }
-
+  const handleClose = () => setShow(false);
+                    
+  const handleShow = () => {
+    setShow(true);
+    setFirstName(props.firstName);
+    setLastName(props.lastName);
+    handleIdChange(props.id)
+  }
 
   function submit(){
     handleClose()
@@ -34,17 +31,7 @@ export default function EditButton(props) {
 
   function handleIdChange(newId){
     setId(newId)
-    console.log(newId)
-    if (!validId.test(newId)) {
-         setIdCaption(<Form.Text id="passwordHelpBlock" className='text-danger'>
-                    کد ملی باید یک عدد ده رقمی باشد
-                </Form.Text>);
-      }
-    else{
-        setIdCaption(<Form.Text id="passwordHelpBlock" className='text-success'>
-                    کد ملی قابل قبول است
-                </Form.Text>);
-    }
+    setIdCaption(idCaptioner(newId))
   }
 
   return (
@@ -78,7 +65,7 @@ export default function EditButton(props) {
             <Row>
                 <Form.Group as={Col} controlId="formGridId">
                 <Form.Label>کد ملی</Form.Label>
-                <Form.Control defaultValue={id} onChange={(evt)=>handleIdChange(evt.target.value)} />
+                <Form.Control type="text" defaultValue={id} onChange={(evt)=>handleIdChange(evt.target.value)} />
                 {idCaption}
                 </Form.Group>
                 <Form.Group as={Col} />

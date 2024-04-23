@@ -1,5 +1,5 @@
-import { Table,Button } from "react-bootstrap";
-import { giveList } from "./JsonManager";
+import { Table } from "react-bootstrap";
+import { giveList } from "./DataManager";
 import TableRow from "./TableRow";
 
 export default function TableContainer({renderApp}){

@@ -2,7 +2,6 @@
 import TableContainer from "./TableContainer";
 import SearchBar from "./SearchBar"
 import AddButton from "./AddButton"
-import {addPerson,giveList} from "./JsonManager"
 import { useState } from "react";
 
 
@@ -13,7 +12,6 @@ export default function App() {
   function renderApp(){
     stateToggler(!stateToggle)
   }
-  console.log(stateToggle)
   
   return (
     <div>

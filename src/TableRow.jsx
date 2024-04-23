@@ -1,6 +1,6 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye,faChartColumn,faTrashCan} from '@fortawesome/free-solid-svg-icons'
+import {faChartColumn} from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'react-bootstrap'
 import EditButton from './EditButton'
 import MapButton from './MapButton'

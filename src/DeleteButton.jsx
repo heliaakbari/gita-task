@@ -1,9 +1,9 @@
-import {deletePerson} from './JsonManager'
+import {deletePerson} from './DataManager'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashCan} from '@fortawesome/free-solid-svg-icons'
-import { Button } from 'react-bootstrap'
+import { Button,Modal } from 'react-bootstrap'
 import { useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
+
 
 export default function DeleteButton({index,renderApp}){
 

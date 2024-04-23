@@ -1,12 +1,10 @@
-import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
-import {Modal} from 'react-bootstrap';
-
+import {Modal, Button} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faLocationDot} from '@fortawesome/free-solid-svg-icons'
 import Mapview from './Mapview';
 
-export default function MapButton({renderApp,location}) {
+export default function MapButton({location}) {
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
