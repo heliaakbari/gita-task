@@ -3,7 +3,7 @@ import SearchForm from './SearchForm';
 export default function SearchBar({setSearchInput}) {
   return (
     <>
-    <Accordion defaultActiveKey="0">
+    <Accordion>
       <Accordion.Item eventKey="0">
         <Accordion.Header>جستجو</Accordion.Header>
         <Accordion.Body>
