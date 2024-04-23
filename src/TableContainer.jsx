@@ -1,11 +1,14 @@
 import { Table } from "react-bootstrap";
 import { giveList } from "./DataManager";
 import TableRow from "./TableRow";
-
-export default function TableContainer({renderApp}){
+import {searchMatch} from "./Utility"
+export default function TableContainer({renderApp,searchInput}){
   let rows =giveList().map((item,index)=>{
+    if(searchMatch(searchInput,item))
+    {
     return(
     <TableRow {...item} key={index} index={index} renderApp={renderApp}></TableRow>)
+    }
 })
 
   return (
