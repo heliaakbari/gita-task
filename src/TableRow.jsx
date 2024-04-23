@@ -1,10 +1,10 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEye,faChartColumn,faTrashCan , faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { faEye,faChartColumn,faTrashCan} from '@fortawesome/free-solid-svg-icons'
 import { Button } from 'react-bootstrap'
-import {deletePerson} from './JsonManager'
 import EditButton from './EditButton'
 import MapButton from './MapButton'
+import DeleteButton from './deleteButton'
 
 export default function TableRow(props){
     return(
@@ -17,7 +17,7 @@ export default function TableRow(props){
             <Button className='mx-1 btn-sm'><FontAwesomeIcon icon={faEye} /></Button>
             <EditButton {...props}/>
             <MapButton location={props.location}></MapButton>
-            <Button className='mx-1 btn-sm' onClick={()=>{deletePerson(props.index); props.renderApp();}}><FontAwesomeIcon icon={faTrashCan} /></Button>
+            <DeleteButton index={props.index} renderApp={props.renderApp} />
             <Button className='mx-1 btn-sm'><FontAwesomeIcon icon={faChartColumn} /></Button>
           </td>
         </tr>
