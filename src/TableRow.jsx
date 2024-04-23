@@ -5,6 +5,8 @@ import { Button } from 'react-bootstrap'
 import EditButton from './EditButton'
 import MapButton from './MapButton'
 import DeleteButton from './deleteButton'
+import ViewButton from './ViewButton'
+
 
 export default function TableRow(props){
     return(
@@ -14,7 +16,7 @@ export default function TableRow(props){
           <td>{props.lastName}</td>
           <td>{props.id}</td>
           <td>
-            <Button className='mx-1 btn-sm'><FontAwesomeIcon icon={faEye} /></Button>
+            <ViewButton {...props}/>
             <EditButton {...props}/>
             <MapButton location={props.location}></MapButton>
             <DeleteButton index={props.index} renderApp={props.renderApp} />
