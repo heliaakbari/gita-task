@@ -3,7 +3,7 @@ import TableContainer from "./TableContainer";
 import SearchBar from "./SearchBar"
 import AddButton from "./AddButton"
 import { useState } from "react";
-
+import { defaultLocation } from "./Utility";
 
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
     <div>
       <header>لیست کارکنان شرکت</header>
       <SearchBar setSearchInput={setSearchInput}></SearchBar>
-      <AddButton renderApp={renderApp}></AddButton>
+      <AddButton styling='my-3' renderApp={renderApp} initVals={{firstName:'',lastName:'',id:'',location:defaultLocation}} actionName="افزودن">افزودن</AddButton>
       <TableContainer renderApp={renderApp} searchInput={searchInput}></TableContainer>
     </div>
   );

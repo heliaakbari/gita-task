@@ -5,7 +5,7 @@ import { mapApiKey as apiKey ,defaultLocation} from './Utility';
 
 export default function Mapview({editable, location=defaultLocation, locationRef={current:defaultLocation}}){
 
-const [mapStatus,setMapStatus]= useState({zoom:[11],center:location,location:location});
+const [mapStatus,setMapStatus]= useState({zoom:11,center:location,location:location});
 
   const Map = Mapir.setToken({
   transformRequest: (url) => {
@@ -19,20 +19,20 @@ const [mapStatus,setMapStatus]= useState({zoom:[11],center:location,location:loc
   },
 });
     function updateStatus(map,evt){
+      if (editable){
+        locationRef.current = [evt.lngLat.lng,evt.lngLat.lat]
+        }
         setMapStatus(
-            {zoom:[evt.target.transform._zoom],
+            {zoom:evt.target.transform._zoom,
             center:[evt.target.transform.center.lng,evt.target.transform.center.lat],
             location: [evt.lngLat.lng,evt.lngLat.lat]}
         )
-        if (editable){
-        locationRef.current = [evt.lngLat.lng,evt.lngLat.lat]
-        }
     }
 
     return(
         <Mapir
           center={mapStatus.center}
-          minZoom={mapStatus.zoom}
+          zoom={[mapStatus.zoom]}
           scrollZoom={false}
           hash={true}
           Map={Map}

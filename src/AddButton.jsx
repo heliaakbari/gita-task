@@ -1,32 +1,37 @@
 import { useState,useRef } from 'react';
 import {Modal,Row,Col,Form,Button} from 'react-bootstrap';
-import { validId ,defaultLocation} from './Utility';
-import { addPerson} from './DataManager';
+import { validId} from './Utility';
+import { addPerson, editPerson} from './DataManager';
 import Mapview from './Mapview';
 import PersonelForm from './PersonelForm';
 
 
-export default function AddButton({renderApp}) {
+export default function AddButton({renderApp,initVals,actionName,children,index=null,styling}) {
   const [show, setShow] = useState(false);
   const handleClose = () => {
-    firstNameRef.current = "";
-    lastNameRef.current = "";
-    idRef.current = ""
-    locationRef.current = defaultLocation;
+    firstNameRef.current = initVals.firstName;
+    lastNameRef.current = initVals.lastName;
+    idRef.current = initVals.id;
+    locationRef.current = initVals.location;
     setShow(false)};
 
   const handleShow = () => setShow(true);
 
-  const firstNameRef = useRef('')
-  const lastNameRef = useRef('')
-  const idRef = useRef('')
-  const locationRef = useRef(defaultLocation)
-
+  const firstNameRef = useRef(initVals.firstName);
+  const lastNameRef= useRef(initVals.lastName);
+  const idRef= useRef(initVals.id);
+  const locationRef= useRef(initVals.location);
 
   function submit(){
     if (validId.test(idRef.current)) {
-      addPerson(idRef.current,firstNameRef.current,lastNameRef.current,locationRef.current)
-      handleClose()
+      if (index){
+        editPerson(idRef.current,firstNameRef.current,lastNameRef.current,locationRef.current,index)
+        setShow(false)
+      }
+      else{
+        addPerson(idRef.current,firstNameRef.current,lastNameRef.current,locationRef.current)
+        handleClose()
+      }
       renderApp()
       }
   }
@@ -34,7 +39,7 @@ export default function AddButton({renderApp}) {
 
   return (
     <>
-      <Button variant="primary" className='my-3' onClick={handleShow}>افزودن</Button>
+      <Button variant="primary"  className={styling} onClick={handleShow}>{children}</Button>
 
       <Modal
         show={show}
@@ -46,7 +51,7 @@ export default function AddButton({renderApp}) {
       >
 
         <Modal.Header>
-          <Modal.Title>افزودن</Modal.Title>
+          <Modal.Title>{actionName}</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -54,7 +59,7 @@ export default function AddButton({renderApp}) {
           <PersonelForm firstNameRef={firstNameRef} lastNameRef={lastNameRef} idRef={idRef}></PersonelForm>
           <Form as={Col}>
           <Form.Label>محل زندگی را انتخاب کنید</Form.Label>
-        <Mapview editable={true} locationRef={locationRef}/>
+        <Mapview editable={true} locationRef={locationRef} location={locationRef.current}/>
         </Form>
         </Row>
         </Modal.Body>
@@ -63,7 +68,7 @@ export default function AddButton({renderApp}) {
           <Button variant="secondary" onClick={handleClose}>
             بستن
           </Button>
-            <Button variant="primary" onClick={submit}>افزودن</Button>
+            <Button variant="primary" onClick={submit}>{actionName}</Button>
         </Modal.Footer>
 
       </Modal>

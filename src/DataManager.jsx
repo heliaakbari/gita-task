@@ -27,7 +27,7 @@ export function deletePerson(index){
   data = newArray
 }
 
-export function editPerson(id,firstName,lastName,index,location=defaultLocation,chart=null){
+export function editPerson(id,firstName,lastName,location=defaultLocation,index="-1",chart=null){
     let newArray = [
         ...data.slice(0, index), // Elements before the one to delete
         {

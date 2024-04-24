@@ -17,16 +17,16 @@ export default function PersonelForm({firstNameRef,lastNameRef,idRef}){
           <Form as={Col}>
                 <Form.Group>
                 <Form.Label>نام</Form.Label>
-                <Form.Control size='sm' type="input" placeholder="نام را وارد کنید" onChange={e=>firstNameRef.current=e.target.value}/>
+                <Form.Control size='sm' defaultValue={firstNameRef.current} type="input" placeholder="نام را وارد کنید" onChange={e=>firstNameRef.current=e.target.value}/>
                 </Form.Group>
 
                 <Form.Group>
                 <Form.Label>نام خانوادگی</Form.Label>
-                <Form.Control size='sm' type="input" placeholder="نام خانوادگی را وارد کنید" onChange={e=>lastNameRef.current=e.target.value}/>
+                <Form.Control size='sm' defaultValue={lastNameRef.current} type="input" placeholder="نام خانوادگی را وارد کنید" onChange={e=>lastNameRef.current=e.target.value}/>
                 </Form.Group>
                 <Form.Group>
                 <Form.Label>کد ملی</Form.Label>
-                <Form.Control size='sm' type="text" placeholder="کد ملی را وارد کنید" onChange={e=>{idRef.current=e.target.value; handleIdChange(e.target.value)}} />
+                <Form.Control size='sm' defaultValue={idRef.current} type="input" placeholder="کد ملی را وارد کنید" onChange={e=>{idRef.current=e.target.value; handleIdChange(e.target.value)}} />
                 {idCaptioner(id)}
                 </Form.Group>
             </Form>
