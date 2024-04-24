@@ -1,3 +1,8 @@
+<style>
+img  {
+  background-color: #000010;
+}
+</style>
 react - bootstrap - vite
 <br />
 to run:
@@ -8,4 +13,4 @@ to run:
   <br />
   diagram:
   <br />
-<img src="./src/assets/diagram.png" style={'color:#000010'}>
+<img src="./src/assets/diagram.png"/>
