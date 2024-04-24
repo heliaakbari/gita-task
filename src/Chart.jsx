@@ -1,81 +1,29 @@
-import React, { Component } from 'react';
-import CanvasJSReact from '@canvasjs/react-charts';
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-    CanvasJS.addColorSet('blueColorSet',
-    [
-        '#b4d1fb',
-        '#0a58c8',
-        '#3f89f5',
-        '#0952b9',
-        '#66a1f7',
-        '#05387d',
-        '#66a1f7',
-        '#07459b'
-    ]);
+import React from "react";
+import {
+	BarChart,
+	Bar,
+	XAxis,
+	YAxis,
+  ResponsiveContainer,
+  Label
+} from "recharts";
 
-class Chart extends Component {
-  	constructor() {
-		super();
-		this.addSymbols = this.addSymbols.bind(this);
-	}
+export default function Chart({data}) {
 
-  eachCalumn = () => {
-    console.log(this.props.data)
-    return Object.entries(this.props.data).map(([key,value]) => 
-      {return { label: key, y: value}}
-    );
-  };
+  const suitableData = Object.entries(data).map(([key,value])=>{return { name: key, y: value/1000000}});
+  console.log(suitableData)
+	return (
+    <ResponsiveContainer aspect={1.33}  style={{direction: 'ltr'}}>
+		<BarChart data={suitableData}>
+			<Bar dataKey="y" fill="#0B5ED7" />
+			<XAxis dataKey="name">
+      <Label value="ماه" offset={-5} position="insideBottom" />
+        </XAxis>
+			<YAxis unit='M' >
+      </YAxis>
+		</BarChart>
+    </ResponsiveContainer>
+	);
+};
 
-  	
-	addSymbols(e) {
-		var suffixes = ["", "K", "M", "B"];
-		var order = Math.max(Math.floor(Math.log(Math.abs(e.value)) / Math.log(1000)), 0);
-		
-		if(order > suffixes.length - 1)
-			order = suffixes.length - 1;
- 
-		var suffix = suffixes[order];
-		return CanvasJS.formatNumber(e.value / Math.pow(1000, order)) + suffix;	
-	}
-
-  render() {
-    const options = {
-            height: '320',
-            colorSet :'blueColorSet',
-			animationEnabled: true,
-			theme: "light2", // "light1", "light2", "dark1", "dark2"
-			title: {
-				text: "دریافتی خالص شش ماه اخیر",
-                fontSize:20,
-			},
-			axisY: {
-				title: "دریافتی(تومان)",
-                minimum:0,
-                labelFormatter: this.addSymbols
-			},
-			axisX: {
-				title: "ماه",
-				
-			},
-      data: [
-        {
-          type: "column",
-          dataPoints: this.eachCalumn()
-        }
-      ]
-    };
-
-    return (
-      <div className="chart">
-        <CanvasJSChart
-          options={options}
-          // onRef = {ref => this.chart = ref}
-        />
-      </div>
-    );
-  }
-}
-
-export default Chart;

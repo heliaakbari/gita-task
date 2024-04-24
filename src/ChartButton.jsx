@@ -17,7 +17,6 @@ export default function ChartButton({data,renderApp}){
     handleClose()
     renderApp()
   }
-  const chart = new Chart(data);
   return (
     <>
 
@@ -31,7 +30,7 @@ export default function ChartButton({data,renderApp}){
            <Chart data={data} ></Chart>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleClose}>
             بستن
           </Button>
         </Modal.Footer>
