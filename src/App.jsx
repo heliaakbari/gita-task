@@ -21,6 +21,11 @@ export default function App() {
       <SearchBar setSearchInput={setSearchInput}></SearchBar>
       <AddButton styling='my-3' renderApp={renderApp} initVals={{firstName:'',lastName:'',id:'',location:defaultLocation}} actionName="افزودن">افزودن</AddButton>
       <TableContainer renderApp={renderApp} searchInput={searchInput}></TableContainer>
+      <div style={{position: 'fixed', bottom: 0, left: 0, margin: '0 5px'}}>
+        Code by {" "}
+      <a href="https://github.com/heliaakbari" target="blank">
+        Helia Akbari</a>
+    </div>
     </div>
   );
 }
