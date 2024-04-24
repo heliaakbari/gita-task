@@ -23,7 +23,7 @@ export default function ChartButton({data,renderApp}){
 
       <Button className='mx-1 btn-sm' onClick={handleShow} title="حقوق"><FontAwesomeIcon icon={faChartColumn} /></Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="my-modal">
         <Modal.Header >
         <Modal.Title>حقوق</Modal.Title>
         </Modal.Header>

@@ -22,7 +22,7 @@ export default function DeleteButton({index,renderApp}){
 
       <Button className='mx-1 btn-sm' onClick={handleShow} title="حذف"><FontAwesomeIcon icon={faTrashCan} /></Button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose} className="my-modal">
         <Modal.Header >
           <Modal.Title>حذف</Modal.Title>
         </Modal.Header>
