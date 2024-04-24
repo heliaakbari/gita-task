@@ -6,6 +6,7 @@ import { useState } from "react";
 import { defaultLocation } from "./Utility";
 
 
+
 export default function App() {
   const [stateToggle, stateToggler] = useState(false);
   const [searchInput,setSearchInput] = useState({lastName:"",firstName:'',id:""})
