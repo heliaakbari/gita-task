@@ -9,4 +9,4 @@ to run:
   <br />
   diagram:
   <br />
-<img src="./src/assets/diagram.png" style="color:#000010;"/>
+<img src="./src/assets/diagram.png" style="color:#033010;"/>
