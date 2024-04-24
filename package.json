@@ -1,17 +1,12 @@
 {
   "name": "react-essentials-start",
   "version": "0.0.0",
-  "homepage": "https://heliaakbari.github.io/gita-task/",
   "scripts": {
-    "predeploy" : "npm --force run build",
-    "deploy" : "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@canvasjs/charts": "^3.8.2",
-    "@canvasjs/react-charts": "^1.0.2",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
@@ -22,7 +17,8 @@
     "mapir-react-component": "^2.0.7",
     "react": "^18.0.0",
     "react-bootstrap": "^2.10.2",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "recharts": "^2.12.6"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
