@@ -1,4 +1,4 @@
-import { Button , Col,Row,Form,Accordion} from 'react-bootstrap';
+import { Button ,Form,Accordion} from 'react-bootstrap';
 import { useState } from 'react';
 
 export default function SearchBar({setSearchInput}) {

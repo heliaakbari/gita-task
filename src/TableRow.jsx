@@ -6,7 +6,6 @@ import AddButton from './AddButton'
 import MapButton from './MapButton'
 import DeleteButton from './DeleteButton'
 import ViewButton from './ViewButton'
-import { editPerson } from './DataManager'
 
 
 export default function TableRow(props){

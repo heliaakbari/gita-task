@@ -2,6 +2,7 @@ import { Table } from "react-bootstrap";
 import { giveList } from "./DataManager";
 import TableRow from "./TableRow";
 import {searchMatch} from "./Utility"
+
 export default function TableContainer({renderApp,searchInput}){
   let rows =giveList().map((item,index)=>{
     if(searchMatch(searchInput,item))
