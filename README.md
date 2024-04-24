@@ -1,4 +1,4 @@
-
+<body style="background-color:#033010;">
 react - bootstrap - vite
 <br />
 to run:
@@ -9,4 +9,5 @@ to run:
   <br />
   diagram:
   <br />
-<img src="./src/assets/diagram.png" style="color:#033010;"/>
+<img src="./src/assets/diagram.png" />
+</body>
