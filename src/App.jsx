@@ -23,7 +23,7 @@ export default function App() {
       <TableContainer renderApp={renderApp} searchInput={searchInput}></TableContainer>
       <div style={{position: 'fixed', bottom: 0, left: 0, margin: '0 5px'}}>
         Code by {" "}
-      <a href="https://github.com/heliaakbari" target="blank">
+      <a href="https://github.com/heliaakbari/gita-task/" target="blank">
         Helia Akbari</a>
     </div>
     </div>
