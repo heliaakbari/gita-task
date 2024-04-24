@@ -1,12 +1,9 @@
 {
   "name": "react-essentials-start",
   "version": "0.0.0",
-  "homepage": "https://heliaakbari.github.io/gita-task/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm --force run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
