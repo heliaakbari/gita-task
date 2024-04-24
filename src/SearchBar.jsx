@@ -17,26 +17,25 @@ export default function SearchBar({setSearchInput}) {
       <Accordion.Item eventKey="0">
         <Accordion.Header>جستجو</Accordion.Header>
         <Accordion.Body>
-              <Form >
-      <Row className="mb-3">
-        <Form.Group as={Col}>
+              <Form className="d-flex justifify-content-around gap-4 ">
+        <Form.Group>
           <Form.Label>نام</Form.Label>
           <Form.Control onChange={(e)=>setFirstName(e.target.value)} defaultValue={firstName} type="input" placeholder="نام را وارد کنید" />
         </Form.Group>
 
-        <Form.Group as={Col}>
+        <Form.Group >
           <Form.Label>نام خانوادگی</Form.Label>
           <Form.Control onChange={(e)=>setLastName(e.target.value)} defaultValue={lastName} type="input" placeholder="نام خانوادگی را وارد کنید" />
         </Form.Group>
 
-        <Form.Group as={Col} controlId="formGridId">
+        <Form.Group controlId="formGridId">
         <Form.Label>کد ملی</Form.Label>
         <Form.Control onChange={(e)=>setId(e.target.value)} type="text" defaultValue={id} placeholder="کد ملی را وارد کنید" />
       </Form.Group>
+
         <div className="col-auto my-0  d-flex align-items-end ">
       <Button className="btn btn-primary" onClick={handleSearch}>جستجو</Button>
     </div>
-      </Row>
     </Form>
         </Accordion.Body>
       </Accordion.Item>
