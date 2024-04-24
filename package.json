@@ -1,12 +1,13 @@
 {
   "name": "react-essentials-start",
   "version": "0.0.0",
+  "homepage": "https://heliaakbari.github.io/gita-task/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "predeploy":"npm --force install && npm run dev",
-    "deploy":"gh-pages -d build"
+    "predeploy": "npm --force run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@canvasjs/charts": "^3.8.2",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
+    "gh-pages": "^6.1.1",
     "vite": "^4.5.3"
   },
   "keywords": [],
