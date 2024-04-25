@@ -24,7 +24,7 @@ export default function AddButton({renderApp,initVals,actionName,children,index=
 
   function submit(){
     if (validId.test(idRef.current)) {
-      if (index){
+      if (index !== null){
         editPerson(idRef.current,firstNameRef.current,lastNameRef.current,locationRef.current,index)
         setShow(false)
       }

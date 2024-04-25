@@ -12,11 +12,6 @@ export default function ChartButton({data,renderApp}){
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  function handleDelete(){
-    deletePerson(index)
-    handleClose()
-    renderApp()
-  }
   return (
     <>
 

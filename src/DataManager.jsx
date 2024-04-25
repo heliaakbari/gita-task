@@ -41,9 +41,10 @@ export function deletePerson(index){
     ...data.slice(index + 1) // Elements after the one to delete
   ];
   data = newArray
+  console.log(data)
 }
 
-export function editPerson(id,firstName,lastName,location=defaultLocation,index="-1",chart=null){
+export function editPerson(id,firstName,lastName,location=defaultLocation,index="-1"){
     let newArray = [
         ...data.slice(0, index), // Elements before the one to delete
         {
@@ -51,7 +52,7 @@ export function editPerson(id,firstName,lastName,location=defaultLocation,index=
         "firstName": firstName,
         "lastName": lastName,
         "location": location,
-        "chart":chart
+        "chart":data[index].chart
         },
         ...data.slice(index + 1) // Elements after the one to delete
     ];
